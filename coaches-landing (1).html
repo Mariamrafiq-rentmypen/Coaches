@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner With Rent My Pen | DFY Resume Writing for Career Coaches</title>
+<meta name="description" content="Backend resume writing and career document execution for career coaches. Standardized systems, custom branding, research-led documents. You coach, I write.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #2a1f1a;
+    --ink-soft: #6b5c55;
+    --paper: #fdf8f5;
+    --paper-warm: #f7ede6;
+    --rule: #e8d8d0;
+    --accent: #b07a6e;
+    --accent-dark: #8a5a50;
+    --accent-light: #faeee9;
+    --blush: #e8c4b8;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; border-bottom: 0.5px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 10; }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--accent-dark); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.84rem; color: var(--ink-soft); text-decoration: none; letter-spacing: 0.03em; }
+  .nav-links a:hover { color: var(--accent-dark); }
+
+  /* HERO */
+  .hero { background: var(--ink); color: var(--paper); padding: 5rem 2.5rem; text-align: center; }
+  .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blush); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.2; font-weight: 400; margin-bottom: 1.5rem; max-width: 760px; margin-left: auto; margin-right: auto; }
+  .hero h1 em { font-style: italic; color: var(--blush); }
+  .hero-sub { font-size: 1.02rem; color: #c8b0a8; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .hero-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent-dark); color: #fdf8f5; padding: 0.8rem 1.75rem; font-size: 0.88rem; letter-spacing: 0.04em; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 500; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--blush); color: var(--ink); }
+  .btn-ghost { background: transparent; color: var(--paper); padding: 0.8rem 1.75rem; font-size: 0.88rem; letter-spacing: 0.04em; border: 0.5px solid var(--blush); cursor: pointer; font-family: 'Inter', sans-serif; text-decoration: none; display: inline-block; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); }
+
+  /* PROOF BAND */
+  .proof-band { background: var(--paper-warm); border-bottom: 0.5px solid var(--rule); padding: 2rem 2.5rem; }
+  .proof-row { max-width: 860px; margin: 0 auto; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center; }
+  .proof-item span { display: block; font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent-dark); }
+  .proof-item p { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); margin-top: 0.2rem; }
+
+  /* WHAT YOU GET */
+  .what { max-width: 860px; margin: 0 auto; padding: 5rem 2.5rem; }
+  .what h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; font-weight: 400; margin-bottom: 1rem; }
+  .what > p { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 3rem; max-width: 600px; }
+  .what-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .what-card { background: var(--paper-warm); border: 0.5px solid var(--rule); padding: 1.5rem; }
+  .what-card .num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--blush); display: block; margin-bottom: 0.5rem; }
+  .what-card h3 { font-size: 0.92rem; font-weight: 500; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .what-card p { font-size: 0.86rem; color: var(--ink-soft); line-height: 1.7; }
+
+  /* HOW IT WORKS */
+  .how { background: var(--paper-warm); border-top: 0.5px solid var(--rule); border-bottom: 0.5px solid var(--rule); padding: 5rem 2.5rem; }
+  .how-inner { max-width: 860px; margin: 0 auto; }
+  .how-inner h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .how-inner > p { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 2.5rem; max-width: 580px; }
+  .how-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--rule); border: 0.5px solid var(--rule); }
+  .how-step { background: var(--paper); padding: 1.75rem 1.5rem; }
+  .how-step .step-num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--blush); display: block; margin-bottom: 0.5rem; }
+  .how-step h4 { font-size: 0.88rem; font-weight: 500; color: var(--accent-dark); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .how-step p { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.65; }
+
+  /* CUSTOM SYSTEM */
+  .system { max-width: 860px; margin: 0 auto; padding: 5rem 2.5rem; }
+  .system h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; font-weight: 400; margin-bottom: 1rem; }
+  .system > p { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 2.5rem; max-width: 600px; }
+  .system-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .system-card { border: 0.5px solid var(--rule); padding: 1.5rem; }
+  .system-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 0.75rem; color: var(--ink); }
+  .system-card ul { list-style: none; }
+  .system-card li { font-size: 0.86rem; color: var(--ink-soft); padding: 0.35rem 0; border-bottom: 0.5px solid var(--rule); display: flex; gap: 0.6rem; }
+  .system-card li:last-child { border-bottom: none; }
+  .system-card li::before { content: "-"; color: var(--accent); flex-shrink: 0; }
+
+  /* PACKAGES */
+  .packages { background: var(--paper-warm); border-top: 0.5px solid var(--rule); border-bottom: 0.5px solid var(--rule); padding: 5rem 2.5rem; }
+  .packages-inner { max-width: 860px; margin: 0 auto; }
+  .packages-inner h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .packages-inner > p { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 2.5rem; max-width: 580px; }
+  .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 0.5px solid var(--rule); }
+  .pkg-card { background: var(--paper); padding: 2rem 1.5rem; display: flex; flex-direction: column; }
+  .pkg-card.featured { background: var(--ink); color: var(--paper); }
+  .pkg-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; font-weight: 500; }
+  .pkg-card.featured .pkg-tag { color: var(--blush); }
+  .pkg-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.25rem; }
+  .pkg-price { font-size: 2rem; font-weight: 500; color: var(--accent-dark); margin-bottom: 0.25rem; letter-spacing: -0.02em; }
+  .pkg-card.featured .pkg-price { color: var(--blush); }
+  .pkg-price-note { font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 1.25rem; }
+  .pkg-card.featured .pkg-price-note { color: #a8908a; }
+  .pkg-items { list-style: none; flex: 1; }
+  .pkg-items li { font-size: 0.84rem; color: var(--ink-soft); padding: 0.4rem 0; border-bottom: 0.5px solid var(--rule); display: flex; gap: 0.6rem; }
+  .pkg-card.featured .pkg-items li { color: #c8b0a8; border-bottom-color: #3a2f2a; }
+  .pkg-items li::before { content: "-"; color: var(--accent); flex-shrink: 0; }
+  .pkg-card.featured .pkg-items li::before { color: var(--blush); }
+  .pkg-items li:last-child { border-bottom: none; }
+  .pkg-note { font-size: 0.78rem; color: var(--ink-soft); margin-top: 1rem; font-style: italic; }
+  .pkg-card.featured .pkg-note { color: #a8908a; }
+
+  .pricing-note { background: var(--paper); border: 0.5px solid var(--rule); padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
+  .pricing-note p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.7; }
+
+  /* SPECIALIZATIONS */
+  .spec { max-width: 860px; margin: 0 auto; padding: 5rem 2.5rem; }
+  .spec h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; font-weight: 400; margin-bottom: 1rem; }
+  .spec > p { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 2.5rem; max-width: 580px; }
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+  .spec-card { border: 0.5px solid var(--rule); padding: 1.5rem; background: var(--paper); }
+  .spec-card strong { display: block; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 0.5rem; font-weight: 500; }
+  .spec-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.7; }
+
+  /* CONTACT */
+  .contact { background: var(--ink); color: var(--paper); padding: 5rem 2.5rem; text-align: center; }
+  .contact h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; margin-bottom: 1rem; }
+  .contact p { font-size: 0.95rem; color: #c8b0a8; max-width: 500px; margin: 0 auto 2rem; line-height: 1.8; }
+  .contact-email { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--paper); text-decoration: none; border-bottom: 0.5px solid var(--blush); padding-bottom: 0.15rem; }
+  .contact-note { font-size: 0.8rem; color: #6a6a62; margin-top: 1.5rem; }
+
+  .section-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+
+  footer { padding: 1.5rem 2.5rem; text-align: center; border-top: 0.5px solid var(--rule); }
+  footer p { font-size: 0.78rem; color: var(--ink-soft); }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1rem; font-size: 0.78rem; }
+    .hero, .what, .how, .system, .packages, .spec, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .pkg-grid { grid-template-columns: 1fr; }
+    .system-grid { grid-template-columns: 1fr; }
+    .proof-row { gap: 1.5rem; }
+    .hero-cta-row { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://mariamrafiq-rentmypen.github.io" class="nav-logo">Rent My <span>Pen</span></a>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#packages">Pricing</a>
+    <a href="#contact">Get started</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">For career coaches</p>
+  <h1>Your resume delivery<br>and <em>branding partner.</em></h1>
+  <p class="hero-sub">Your coaching program ends. The resume stays with your client for life. What it looks like, how it reads, and whether it reflects your brand quality - that is what we take care of. Consistent delivery. Standardized processes. Every client gets the same quality, every time, under your brand identity.</p>
+  <div class="hero-cta-row">
+    <a href="#contact" class="btn-primary">Let's talk partnership</a>
+    <a href="#packages" class="btn-ghost">See packages</a>
+  </div>
+</section>
+
+<div class="proof-band">
+  <div class="proof-row">
+    <div class="proof-item"><span>5,000+</span><p>Documents delivered</p></div>
+    <div class="proof-item"><span>6</span><p>Years in practice</p></div>
+    <div class="proof-item"><span>0</span><p>Escalations. Ever.</p></div>
+    <div class="proof-item"><span>100%</span><p>Human written. No AI.</p></div>
+  </div>
+</div>
+
+<section class="what" id="what">
+  <p class="section-label">What this is</p>
+  <h2>Standardized delivery. Consistent quality. Your brand on every document.</h2>
+  <p>A coaching program has a start and an end. The resume a client walks away with stays with them for years. It should reflect the quality of your program, carry your brand identity, and be built the same way every single time - regardless of who the client is or what stage they are at. That is what this partnership delivers.</p>
+  <div class="what-grid">
+    <div class="what-card">
+      <span class="num">01</span>
+      <h3>Standardized process per coach</h3>
+      <p>I build a delivery system around your methodology - templates, research process, quality standards - so every client receives the same caliber of work. No inconsistency, no variation in quality.</p>
+    </div>
+    <div class="what-card">
+      <span class="num">02</span>
+      <h3>Direct client delivery</h3>
+      <p>I work directly with your clients from intake to final delivery. Documents go straight to them. You stay in the coaching relationship while the document side is fully handled.</p>
+    </div>
+    <div class="what-card">
+      <span class="num">03</span>
+      <h3>Your brand on everything</h3>
+      <p>Every resume, guide, and LinkedIn asset is built to match your brand identity - colors, format, tone, and presentation. Your clients experience your standard, not a generic service.</p>
+    </div>
+    <div class="what-card">
+      <span class="num">04</span>
+      <h3>Research before writing</h3>
+      <p>Every client goes through a proper research phase before a single word is written - role alignment, culture fit, keyword strategy, gap analysis. Documents built on real intelligence.</p>
+    </div>
+    <div class="what-card">
+      <span class="num">05</span>
+      <h3>A system you keep</h3>
+      <p>The templates, SOPs, and delivery frameworks I build for your practice are yours. As your program grows or your client base shifts, the system scales with you.</p>
+    </div>
+    <div class="what-card">
+      <span class="num">06</span>
+      <h3>Selective by design</h3>
+      <p>I work with a limited number of coaches at a time. Building a proper system for each practice takes real work - I only take on partnerships where I can deliver the standard I hold myself to.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="system">
+  <p class="section-label">Your custom system includes</p>
+  <h2>Built around your methodology, not ours.</h2>
+  <p>Every coach I partner with gets a dedicated system built once and refined over time. This is what makes the backend scalable and consistent even as your client volume grows.</p>
+  <div class="system-grid">
+    <div class="system-card">
+      <h3>Document templates</h3>
+      <ul>
+        <li>Resume templates matched to your brand colors and typography</li>
+        <li>LinkedIn optimization guide template in your voice</li>
+        <li>Cover letter framework aligned to your coaching philosophy</li>
+        <li>Banner and headshot design guidelines</li>
+      </ul>
+    </div>
+    <div class="system-card">
+      <h3>Research framework</h3>
+      <ul>
+        <li>Role intelligence process specific to your client profiles</li>
+        <li>Company culture alignment methodology</li>
+        <li>ATS and keyword mapping system per industry niche</li>
+        <li>Gap analysis and positioning strategy framework</li>
+      </ul>
+    </div>
+    <div class="system-card">
+      <h3>SOPs and workflows</h3>
+      <ul>
+        <li>Intake checklist customized to what you collect from clients</li>
+        <li>Delivery format and naming conventions per your preference</li>
+        <li>Revision and feedback routing process</li>
+        <li>Quality checklist tailored to your standards</li>
+      </ul>
+    </div>
+    <div class="system-card">
+      <h3>Client-facing assets</h3>
+      <ul>
+        <li>Customized resume tailoring prompts per client profile</li>
+        <li>Interview preparation guide framework</li>
+        <li>LinkedIn content starter pack</li>
+        <li>Career blueprint document for long-term client use</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO GET STARTED -->
+<section style="max-width:860px;margin:0 auto;padding:5rem 2.5rem;" id="start">
+  <p class="section-label">How to get started</p>
+  <h2 style="font-family:'DM Serif Display',serif;font-size:1.9rem;font-weight:400;margin-bottom:1rem;">No system before we have a reason to build one.</h2>
+  <p style="font-size:0.97rem;color:var(--ink-soft);line-height:1.8;margin-bottom:2.5rem;max-width:600px;">I do not build a custom system for a coach I have not worked with yet. The onboarding process is designed so both sides know exactly what they are getting into before any long-term commitment is made.</p>
+
+  <div style="display:grid;gap:1px;background:var(--rule);border:0.5px solid var(--rule);">
+
+    <div style="background:var(--paper);padding:1.75rem 1.5rem;display:grid;grid-template-columns:48px 1fr;gap:1.25rem;align-items:start;">
+      <span style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--blush);">1</span>
+      <div>
+        <h4 style="font-size:0.88rem;font-weight:500;color:var(--accent-dark);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.4rem;">Discovery call</h4>
+        <p style="font-size:0.86rem;color:var(--ink-soft);line-height:1.7;">We talk through your coaching methodology, your typical client profiles, your brand, and what you need from this partnership. No commitment required.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--paper-warm);padding:1.75rem 1.5rem;display:grid;grid-template-columns:48px 1fr;gap:1.25rem;align-items:start;">
+      <span style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--blush);">2</span>
+      <div>
+        <h4 style="font-size:0.88rem;font-weight:500;color:var(--accent-dark);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.4rem;">Test project</h4>
+        <p style="font-size:0.86rem;color:var(--ink-soft);line-height:1.7;margin-bottom:0.75rem;">Two options depending on your preference:</p>
+        <p style="font-size:0.86rem;color:var(--ink-soft);line-height:1.7;margin-bottom:0.5rem;"><strong style="color:var(--ink);font-weight:500;">Option A (preferred):</strong> I work on your own CV. You go through the full intake process as the client - you see exactly how the research works, how the intake call runs, and what the final documents look like before a single paying client is involved.</p>
+        <p style="font-size:0.86rem;color:var(--ink-soft);line-height:1.7;"><strong style="color:var(--ink);font-weight:500;">Option B:</strong> Assign a real client as a test project at a flat $100. You receive the full Package 03 scope - all deliverables, all research, all custom forms and branding materials included. This is not a lite version. It is the complete package at a test rate so you can evaluate the quality firsthand.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--paper);padding:1.75rem 1.5rem;display:grid;grid-template-columns:48px 1fr;gap:1.25rem;align-items:start;">
+      <span style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--blush);">3</span>
+      <div>
+        <h4 style="font-size:0.88rem;font-weight:500;color:var(--accent-dark);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.4rem;">First 2 to 3 clients</h4>
+        <p style="font-size:0.86rem;color:var(--ink-soft);line-height:1.7;">Once the test project is done and we move forward, I start learning your preferences - what resources you use, how you communicate with clients, what your program's standards look like. Each project refines the process.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--paper-warm);padding:1.75rem 1.5rem;display:grid;grid-template-columns:48px 1fr;gap:1.25rem;align-items:start;">
+      <span style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--blush);">4</span>
+      <div>
+        <h4 style="font-size:0.88rem;font-weight:500;color:var(--accent-dark);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.4rem;">System build - by client 10</h4>
+        <p style="font-size:0.86rem;color:var(--ink-soft);line-height:1.7;">By the time we have worked through approximately 10 client profiles together, the full SOPs, templates, and delivery frameworks for your practice are in place. The system is built from how you actually work - not assumptions made before we start.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="packages" id="packages">
+  <div class="packages-inner">
+    <p class="section-label">Packages and pricing</p>
+    <h2>Per client. No retainer required to start.</h2>
+    <p>All packages include the master resume as part of the research and production process - this is the comprehensive document your client keeps as a career blueprint moving forward.</p>
+
+    <div class="consultation-note" style="background:var(--paper);border:0.5px solid var(--rule);border-left:2px solid var(--accent-dark);padding:1.25rem 1.5rem;margin-bottom:2rem;">
+      <p style="font-size:0.88rem;color:var(--ink);line-height:1.75;"><strong style="display:block;margin-bottom:0.35rem;color:var(--accent-dark);font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;">Every package includes consultation time</strong>All packages come with 30 to 60 minutes of one-on-one consultation time, split however works best - typically 30 minutes for client intake before creation begins, and 30 minutes for revision review after the first draft. Coaches are welcome to join the intake call, or leave it entirely to me to handle independently. In the Executive package, clients with 15 to 30+ years of experience are allocated up to 60 to 90 minutes to ensure full scope capture. Revision cycles are always unlimited.</p>
+    </div>
+
+    <div class="pkg-grid">
+
+      <div class="pkg-card">
+        <p class="pkg-tag">Foundation</p>
+        <p class="pkg-name">Package 01</p>
+        <p class="pkg-price">$200</p>
+        <p class="pkg-price-note">per client</p>
+        <ul class="pkg-items">
+          <li>Master resume + research document</li>
+          <li>Targeted resume (JD-aligned, 2-page)</li>
+          <li>Role intelligence research phase</li>
+          <li>Culture alignment and gap analysis</li>
+          <li>30-60 min consultation (split intake + revision)</li>
+          <li>Unlimited revisions</li>
+          <li>Delivered directly to client in 2-3 business days</li>
+        </ul>
+        <p class="pkg-note">Best for mid-career professionals and career changers</p>
+      </div>
+
+      <div class="pkg-card featured">
+        <p class="pkg-tag">Most popular</p>
+        <p class="pkg-name">Package 02</p>
+        <p class="pkg-price">$280</p>
+        <p class="pkg-price-note">per client</p>
+        <ul class="pkg-items">
+          <li>Everything in Package 01</li>
+          <li>LinkedIn optimization guide</li>
+          <li>Cover letter (targeted)</li>
+          <li>Custom branded banners and headshot guidelines</li>
+          <li>Extended tailoring prompts</li>
+          <li>30-60 min consultation (split intake + revision)</li>
+          <li>Unlimited revisions</li>
+          <li>Delivered directly to client in 2-3 business days</li>
+        </ul>
+        <p class="pkg-note">Best for senior and executive-track clients</p>
+      </div>
+
+      <div class="pkg-card">
+        <p class="pkg-tag">Executive and STEM</p>
+        <p class="pkg-name">Package 03</p>
+        <p class="pkg-price">$385</p>
+        <p class="pkg-price-note">per client</p>
+        <ul class="pkg-items">
+          <li>Everything in Package 02</li>
+          <li>C-suite and VP level positioning</li>
+          <li>STEM and tech professional formatting</li>
+          <li>Deep research (publications, patents, technical scope)</li>
+          <li>Executive bio (short form)</li>
+          <li>Full career blueprint document</li>
+          <li>60-90 min consultation for 15+ year profiles</li>
+          <li>Unlimited revisions</li>
+          <li>Turnaround 3-4 business days (1 full day dedicated to research)</li>
+        </ul>
+        <p class="pkg-note">Best for C-suite, VP, PhD, and STEM professionals</p>
+      </div>
+
+    </div>
+
+    <div class="pricing-note">
+      <p style="margin-bottom:0.75rem;">All packages include your custom system setup at no extra charge on onboarding. <strong>Pricing is flexible based on volume</strong> - coaches sending consistent monthly client flow receive adjusted rates. All pricing is per client delivered, billed monthly. Payment via Wise or PayPal.</p>
+      <p style="margin-bottom:0.75rem;font-size:0.86rem;color:var(--ink-soft);">Standard turnaround is 2-3 business days for Packages 01 and 02, and 3-4 business days for Package 03 where one full day is dedicated to research. A 24-hour rush option is available in exceptional cases and does not include the intake consultation.</p>
+      <p style="color:var(--accent-dark);font-size:0.86rem;font-style:italic;">We are selective about the coaches we partner with. Building a proper custom system for each coach takes significant time and expertise - we only onboard coaches whose methodology and client profiles are a strong fit for what we do. If you are interested, reach out and we will tell you honestly whether we are the right match.</p>
+    </div>
+  </div>
+</section>
+
+<section class="spec" id="specializations">
+  <p class="section-label">Specializations</p>
+  <h2>Deeper expertise where it counts.</h2>
+  <p>I bring specific depth to client profiles that most backend writers are not equipped to handle.</p>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <strong>STEM and PhD professionals</strong>
+      <p>Research-first approach for academics, engineers, and scientists transitioning into or advancing within industry. PSR format, technical accuracy, zero fabrication of quantitative claims.</p>
+    </div>
+    <div class="spec-card">
+      <strong>C-suite and VP level</strong>
+      <p>Executive positioning, board-ready language, and P&L-level narrative construction for leaders targeting $200k+ roles.</p>
+    </div>
+    <div class="spec-card">
+      <strong>Federal and military transition</strong>
+      <p>Federal-to-civilian translation, SES narrative, military-to-corporate language conversion. Extensive experience in this pipeline.</p>
+    </div>
+    <div class="spec-card">
+      <strong>Career pivots and gaps</strong>
+      <p>Gap bridging, career change narratives, and non-linear career positioning for clients whose story is more complex than a straightforward ladder.</p>
+    </div>
+    <div class="spec-card">
+      <strong>US and Singapore markets</strong>
+      <p>Market-specific formatting, language, and hiring conventions for US and Singapore clients. Documents built for how hiring actually works in each market.</p>
+    </div>
+    <div class="spec-card">
+      <strong>Healthcare and biotech</strong>
+      <p>Masters in biotechnology. I can decode technical medical and scientific careers and translate them accurately without dumbing them down.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Ready to take documents off your plate?</h2>
+  <p>Let's start with a 30-minute call to talk through your coaching practice, your client profiles, and how I can build a system around what you already do. No pitch. Just a conversation.</p>
+  <a href="mailto:mariam.predictiveintelligence@gmail.com" class="contact-email">mariam.predictiveintelligence@gmail.com</a>
+  <br><br>
+  <a href="https://calendly.com/mariam-predictiveintelligence" target="_blank" class="btn-primary" style="display:inline-block;margin-top:0.5rem;">Book a free discovery call</a>
+  <p class="contact-note">Selective partnerships only - US and Singapore markets. Reach out and we will tell you honestly if it is a good fit.</p>
+</section>
+
+<footer>
+  <p>Rent My Pen - Mariam Rafiq Malik - Resume Delivery and Branding Partner for Career Coaches - mariam.predictiveintelligence@gmail.com</p>
+</footer>
+
+</body>
+</html>
